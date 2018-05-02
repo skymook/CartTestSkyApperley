@@ -10,6 +10,12 @@ import Foundation
 
 class ShoppingEngine {
     
-    let products:[String] = ["fail"]
+    
+    var products:[String] = []
+    
+    
+    func add(item: String) {
+        products.append(item)
+    }
     
 }

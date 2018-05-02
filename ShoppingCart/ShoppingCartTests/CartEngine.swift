@@ -28,6 +28,20 @@ class CartEngine: XCTestCase {
         XCTAssertEqual(result, 0)
     }
     
+    func testAddAppleToCart() {
+        let cart = ShoppingEngine()
+        cart.add(item: "Apple")
+        let result = cart.products.count
+        XCTAssertEqual(result, 1)
+    }
+    
+    func testAddOrangeToCart() {
+        let cart = ShoppingEngine()
+        cart.add(item: "Orange")
+        let result = cart.products.count
+        XCTAssertEqual(result, 1)
+    }
+    
     
     
 
