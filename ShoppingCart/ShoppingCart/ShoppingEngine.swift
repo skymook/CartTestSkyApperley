@@ -24,14 +24,31 @@ class ShoppingEngine {
     func calculateTotalOfProducts() -> Double {
         var total:Double = 0
         
-        for item in products {
-            if item == "Apple" {
-                total += appleCost
-            } else {
-                total += orangeCost
-            }
-        }
+        total += caculateAppleTwoForOneDiscount()
+//        for item in products {
+//            if item == "Apple" {
+//                total += appleCost
+//            } else {
+//                total += orangeCost
+//            }
+//        }
         
+        return total
+    }
+    
+    func caculateAppleTwoForOneDiscount() -> Double {
+        var total:Double = 0
+        // filter apples only
+        let apples = products.filter{ $0 == "Apple" }
+        
+        let noDiscount = apples.count % 2 // remainder
+        let twoForOneCount = apples.count - noDiscount
+        
+        // costs
+        let disacountedApples = appleCost * Double(twoForOneCount - noDiscount)
+        let payableApples = appleCost * Double(twoForOneCount/2)
+        // total
+        total += disacountedApples + payableApples
         return total
     }
     
