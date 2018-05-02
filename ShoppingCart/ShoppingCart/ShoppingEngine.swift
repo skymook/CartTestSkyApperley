@@ -25,13 +25,9 @@ class ShoppingEngine {
         var total:Double = 0
         
         total += caculateAppleTwoForOneDiscount()
-//        for item in products {
-//            if item == "Apple" {
-//                total += appleCost
-//            } else {
-//                total += orangeCost
-//            }
-//        }
+        
+        let oranges = products.filter{ $0 == "Orange" }
+        total += orangeCost * Double(oranges.count)
         
         return total
     }
@@ -42,11 +38,14 @@ class ShoppingEngine {
         let apples = products.filter{ $0 == "Apple" }
         
         let noDiscount = apples.count % 2 // remainder
-        let twoForOneCount = apples.count - noDiscount
-        
+        var twoForOneCount = apples.count - noDiscount
+        if twoForOneCount >= 2 {
+            twoForOneCount = twoForOneCount / 2
+        }
         // costs
-        let disacountedApples = appleCost * Double(twoForOneCount - noDiscount)
-        let payableApples = appleCost * Double(twoForOneCount/2)
+        let disacountedApples = appleCost * Double(twoForOneCount)
+        
+        let payableApples = appleCost * Double(noDiscount)
         // total
         total += disacountedApples + payableApples
         return total
