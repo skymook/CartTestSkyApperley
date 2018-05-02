@@ -12,8 +12,8 @@
 		33DB31C1209A042C00598165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DB31BF209A042C00598165 /* Main.storyboard */; };
 		33DB31C3209A042D00598165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DB31C2209A042D00598165 /* Assets.xcassets */; };
 		33DB31C6209A042D00598165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DB31C4209A042D00598165 /* LaunchScreen.storyboard */; };
-		33DB31D1209A042D00598165 /* ShoppingCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB31D0209A042D00598165 /* ShoppingCartTests.swift */; };
 		33DB31DC209A042D00598165 /* ShoppingCartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB31DB209A042D00598165 /* ShoppingCartUITests.swift */; };
+		33DB31EA209A049300598165 /* CartEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB31E9209A049300598165 /* CartEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +42,11 @@
 		33DB31C5209A042D00598165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33DB31C7209A042D00598165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DB31CC209A042D00598165 /* ShoppingCartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingCartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		33DB31D0209A042D00598165 /* ShoppingCartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTests.swift; sourceTree = "<group>"; };
 		33DB31D2209A042D00598165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DB31D7209A042D00598165 /* ShoppingCartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingCartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DB31DB209A042D00598165 /* ShoppingCartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartUITests.swift; sourceTree = "<group>"; };
 		33DB31DD209A042D00598165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33DB31E9209A049300598165 /* CartEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +110,8 @@
 		33DB31CF209A042D00598165 /* ShoppingCartTests */ = {
 			isa = PBXGroup;
 			children = (
-				33DB31D0209A042D00598165 /* ShoppingCartTests.swift */,
 				33DB31D2209A042D00598165 /* Info.plist */,
+				33DB31E9209A049300598165 /* CartEngine.swift */,
 			);
 			path = ShoppingCartTests;
 			sourceTree = "<group>";
@@ -196,6 +196,7 @@
 					};
 					33DB31CB209A042D00598165 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						TestTargetID = 33DB31B7209A042C00598165;
 					};
 					33DB31D6209A042D00598165 = {
@@ -265,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33DB31D1209A042D00598165 /* ShoppingCartTests.swift in Sources */,
+				33DB31EA209A049300598165 /* CartEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +466,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.skyapperly.ShoppingCartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingCart.app/ShoppingCart";
@@ -485,6 +488,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
