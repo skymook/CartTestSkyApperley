@@ -50,6 +50,13 @@ class CartEngine: XCTestCase {
         XCTAssertEqual(result, 2.05)
     }
     
+    func testCaculateAppleTwoForOneDiscount() {
+        cart.add(item: "Apple")
+        cart.add(item: "Apple")
+        cart.add(item: "Apple")
+        let result = cart.caculateAppleTwoForOneDiscount()
+        XCTAssertEqual(result, 1.20)
+    }
     
 
     
