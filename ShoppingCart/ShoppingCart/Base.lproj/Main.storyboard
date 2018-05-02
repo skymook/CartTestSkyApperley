@@ -30,10 +30,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1j-Zu-DM0">
                                         <rect key="frame" x="0.0" y="0.0" width="147.5" height="50"/>
                                         <state key="normal" title="Buy Apple"/>
+                                        <connections>
+                                            <action selector="userDidWantToBuyApples:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TnL-DZ-xtN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLL-sV-QPE">
                                         <rect key="frame" x="147.5" y="0.0" width="147.5" height="50"/>
                                         <state key="normal" title="Buy Orange"/>
+                                        <connections>
+                                            <action selector="userDidWantToBuyOranges:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Syy-Lt-WVf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -53,6 +59,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="totalLabel" destination="BV1-62-K6H" id="7il-qx-src"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

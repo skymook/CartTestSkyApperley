@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var totalLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - buttons
+    
+    @IBAction func userDidWantToBuyApples(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func userDidWantToBuyOranges(_ sender: UIButton) {
+        
+    }
+    
 
 }
 
