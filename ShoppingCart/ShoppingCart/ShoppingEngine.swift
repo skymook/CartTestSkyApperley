@@ -20,14 +20,15 @@ class ShoppingEngine {
         products.append(item)
     }
     
+    // MARK: - calculations
     
     func calculateTotalOfProducts() -> Double {
         var total:Double = 0
         
+        // apples
         total += caculateAppleTwoForOneDiscount()
-        
-        let oranges = products.filter{ $0 == "Orange" }
-        total += orangeCost * Double(oranges.count)
+        // oranges
+        total += calcuateOrangeThreeForTwoDiscount()
         
         return total
     }
@@ -48,6 +49,23 @@ class ShoppingEngine {
         let payableApples = appleCost * Double(noDiscount)
         // total
         total += disacountedApples + payableApples
+        return total
+    }
+    
+    func calcuateOrangeThreeForTwoDiscount() -> Double {
+        var total:Double = 0
+        // filter apples only
+        let oranges = products.filter{ $0 == "Orange" }
+        let noDiscount = oranges.count % 3 // remainder
+        var threeForOneCount = oranges.count - noDiscount
+        let orangesToRemove = threeForOneCount / 3
+        threeForOneCount -= orangesToRemove
+        // costs
+        let disacountedOranges = orangeCost * Double(threeForOneCount)
+        
+        let payableOranges = orangeCost * Double(noDiscount)
+        // total
+        total += disacountedOranges + payableOranges
         return total
     }
     
