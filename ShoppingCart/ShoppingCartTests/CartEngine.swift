@@ -22,26 +22,31 @@ class CartEngine: XCTestCase {
         super.tearDown()
     }
     
+    let cart = ShoppingEngine()
+    
     func testCartInitWithZero() {
-        let cart = ShoppingEngine()
         let result = cart.products.count
         XCTAssertEqual(result, 0)
     }
     
     func testAddAppleToCart() {
-        let cart = ShoppingEngine()
         cart.add(item: "Apple")
         let result = cart.products.count
         XCTAssertEqual(result, 1)
     }
     
     func testAddOrangeToCart() {
-        let cart = ShoppingEngine()
         cart.add(item: "Orange")
         let result = cart.products.count
         XCTAssertEqual(result, 1)
     }
     
+    func testTotalOfCartIsValid() {
+        cart.add(item: "Apple")
+        cart.add(item: "Orange")
+        let result = cart.totalOfProducts()
+        XCTAssertEqual(result, 0.85)
+    }
     
     
 
