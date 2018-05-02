@@ -28,9 +28,11 @@ class ShoppingCartUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLabelIsUpdatingForBuyingApple() {
+        let app = XCUIApplication()
+        app.buttons["Buy Apple"].tap()
+        let totalLabel = app.staticTexts["totalLabel"]
+        XCTAssertEqual(totalLabel.label, "0.6")
     }
     
 }
