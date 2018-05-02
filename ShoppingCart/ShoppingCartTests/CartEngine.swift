@@ -44,8 +44,10 @@ class CartEngine: XCTestCase {
     func testTotalOfCartIsValid() {
         cart.add(item: "Apple")
         cart.add(item: "Orange")
-        let result = cart.totalOfProducts()
-        XCTAssertEqual(result, 0.85)
+        cart.add(item: "Apple")
+        cart.add(item: "Apple")
+        let result = cart.calculateTotalOfProducts()
+        XCTAssertEqual(result, 2.05)
     }
     
     
