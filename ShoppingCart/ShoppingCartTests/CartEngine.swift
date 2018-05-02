@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import ShoppingCart
+
 class CartEngine: XCTestCase {
     
     override func setUp() {
@@ -21,7 +23,7 @@ class CartEngine: XCTestCase {
     }
     
     func testCartInitWithZero() {
-        let cart = ShoppingCart()
+        let cart = ShoppingEngine()
         let result = cart.products.count
         XCTAssertEqual(result, 0)
     }
