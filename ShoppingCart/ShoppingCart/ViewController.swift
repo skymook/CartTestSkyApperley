@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     
+    // dependences
+    let cart = ShoppingEngine()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,15 @@ class ViewController: UIViewController {
     // MARK: - buttons
     
     @IBAction func userDidWantToBuyApples(_ sender: UIButton) {
-        
+        cart.add(item: "Apple")
+        let total = cart.calculateTotalOfProducts()
+        totalLabel.text = String(total)
     }
     
     @IBAction func userDidWantToBuyOranges(_ sender: UIButton) {
-        
+        cart.add(item: "Orange")
+        let total = cart.calculateTotalOfProducts()
+        totalLabel.text = String(total)
     }
     
 
